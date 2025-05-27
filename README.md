@@ -8,11 +8,12 @@ This project is a deep learning-based emotion recognition system built on the FE
 
 ```
 FER2013-Emotion-Recognition/
-├── data/                      # FER2013 dataset (not included)
-│   └── train/                # Train images organized in class folders
+├── data/                      # FER2013 dataset
+│   └── train/
+│   └── test/                
 ├── notebooks/
-│   └── EDA.ipynb            # Optional: Exploratory data analysis
-├── src/                      # All core source code
+│   └── EDA.ipynb            
+├── src/                     # All core source code
 │   ├── config.py            # Constants and hyperparameters
 │   ├── data_loader.py       # Loads and preprocesses dataset
 │   ├── augment.py           # Image augmentation using ImageDataGenerator
@@ -25,13 +26,13 @@ FER2013-Emotion-Recognition/
 │   └── __init__.py
 ├── callbacks/
 │   └── lr_scheduler.py      # LogCosineDecay custom callback
-├── outputs/                  # Saved outputs
+├── outputs/                 # Saved outputs
 │   ├── checkpoints/         # Saved model weights (.h5, .keras)
 │   └── plots/               # Accuracy/loss plots, confusion matrix
-├── main.py                   # Main script to run training + evaluation
-├── requirements.txt          # Dependencies
-├── README.md                 # This file
-└── .gitignore                # Ignored files and folders
+├── main.py                  # Main script to run training + evaluation
+├── requirements.txt         # Dependencies
+├── README.md                # This file
+└── .gitignore               # Ignored files and folders
 ```
 
 ---
@@ -128,14 +129,19 @@ Saved in the `outputs/` folder:
 
 ---
 
-## 📊 Sample Results
+## 📊 Test Results (test Set)
 
-| Emotion  | Precision | Recall | F1 Score |
-| -------- | --------- | ------ | -------- |
-| Happy    | 0.91      | 0.93   | 0.92     |
-| Sad      | 0.78      | 0.75   | 0.76     |
-| Fear     | 0.65      | 0.60   | 0.62     |
-| *(etc.)* |           |        |          |
+| Emotion     | Precision | Recall | F1 Score | support |
+|-------------|-----------|--------|----------|---------|
+| Angry       | 0.56      | 0.55   | 0.56     | 958     |
+| Disgust     | 0.68      | 0.52   | 0.59     | 111     |
+| Fear        | 0.56      | 0.33   | 0.42     | 1024    |
+| Happy       | 0.85      | 0.87   | 0.86     | 1774    |
+| Neutral     | 0.57      | 0.66   | 0.62     | 1233    |
+| Sad	        | 0.52      | 0.56   | 0.54     | 1247    |
+| Surprise    | 0.70      | 0.81   | 0.75     | 831     |
+|-------------|-----------|--------|----------|---------|
+| Accuracy    |      	    |    	   | 0.65     | 7178	  |
 
 *Note: Results will vary based on training sample size and data quality.*
 
