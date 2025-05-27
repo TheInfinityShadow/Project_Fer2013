@@ -32,5 +32,5 @@ def train_model(model, datagen, x_train, y_train, x_val, y_val):
         class_weight=weights
     )
 
-    model.save(os.path.join(CHECKPOINT_DIR, "final_model.h5"))
+    model.save(os.path.join(CHECKPOINT_DIR, "final_model.keras"))
     return history
