@@ -6,14 +6,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.applications.resnet_v2 import preprocess_input
-from .config import INPUT_SIZE, NUM_CLASSES, DATA_DIR
+from .config import INPUT_SIZE, NUM_CLASSES, TRAIN_DIR
 
 le = LabelEncoder()
 
 
 def load_data():
     data, labels = [], []
-    for path in glob.glob(os.path.join(DATA_DIR, '*', '*')):
+    for path in glob.glob(os.path.join(TRAIN_DIR, '*', '*')):
         img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
         img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
         img = cv2.resize(img, (INPUT_SIZE, INPUT_SIZE))
