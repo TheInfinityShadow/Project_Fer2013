@@ -146,14 +146,6 @@ Saved in the `outputs/` folder:
 
 ---
 
-## 🧪 Extras
-
-* 📓 `EDA.ipynb`: Optional exploratory notebook
-* 🧠 Grad-CAM support can be added for interpretability
-* 🛌 Model is modular and ready for further extension (e.g. MobileNet, EfficientNet)
-
----
-
 ## 📜 License
 
 This project is released for educational and research purposes. Please cite the original FER2013 dataset if used in publications.
