@@ -13,7 +13,7 @@ le = LabelEncoder()
 
 def load_data():
     data, labels = [], []
-    for path in glob.glob(os.path.join(TRAIN_DIR, '*', '*')):
+    for i, path in enumerate(glob.glob(os.path.join(TRAIN_DIR, '*', '*'))):
         img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
         img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
         img = cv2.resize(img, (INPUT_SIZE, INPUT_SIZE))
@@ -23,8 +23,14 @@ def load_data():
         label = os.path.basename(os.path.dirname(path))
         labels.append(label)
 
+        # label = path.split("\\")[-2]
+        # labels.append(label)
+
+        if i % 2870 == 0:
+            print(f"{i}/28708 samples loaded")
+
     data = np.array(data)
     labels = le.fit_transform(labels)
     labels = to_categorical(labels, NUM_CLASSES)
 
-    return train_test_split(data, labels, test_size=0.2, random_state=42), le
+    return train_test_split(data, labels, test_size=0.2, random_state=42)
