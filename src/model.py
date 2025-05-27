@@ -1,8 +1,8 @@
 from tensorflow.keras import layers, models, optimizers
 from tensorflow.keras.applications import ResNet50V2
-from .cbam import CBAMLayer
-from .config import INPUT_SIZE, NUM_CLASSES
-from .loss import focal_loss
+from cbam import CBAMLayer
+from config import INPUT_SIZE, NUM_CLASSES
+from loss import focal_loss
 
 
 def build_model(learning_rate_schedule):

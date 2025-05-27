@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import os
-from .config import PLOTS_DIR
+from config import PLOTS_DIR
 
 
 def plot_history(history):

@@ -1,11 +1,21 @@
 from sklearn.utils import class_weight
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
 import os
-from .config import CHECKPOINT_DIR
+from config import CHECKPOINT_DIR
+from model import build_model as model
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from callbacks.lr_scheduler import LogCosineDecay
 
 
-def train_model(model, datagen, x_train, y_train, x_val, y_val, callbacks):
+def train_model(model, datagen, x_train, y_train, x_val, y_val):
     os.makedirs(CHECKPOINT_DIR, exist_ok=True)
+
+    callbacks = [
+        ModelCheckpoint("best_model.keras", save_best_only=True, monitor="val_loss", mode="min", verbose=1),
+        EarlyStopping(monitor="val_loss", patience=5, restore_best_weights=True, verbose=1),
+        LogCosineDecay(learning_rate, lr_log)
+    ]
 
     weights = class_weight.compute_class_weight(
         class_weight="balanced",

@@ -1,6 +1,6 @@
+# src/cbam.py
 from tensorflow.keras import layers
 import tensorflow as tf
-
 
 class CBAMLayer(layers.Layer):
     def __init__(self, ratio=8):
@@ -32,3 +32,8 @@ class CBAMLayer(layers.Layer):
         spatial_attention = self.spatial_conv(layers.Concatenate()([avg_pool, max_pool]))
 
         return layers.Multiply()([x, spatial_attention])
+
+    def get_config(self):
+        config = super(CBAMLayer, self).get_config()
+        config.update({"ratio": self.ratio})
+        return config

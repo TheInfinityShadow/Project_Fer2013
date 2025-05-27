@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.applications.resnet_v2 import preprocess_input
-from .config import INPUT_SIZE, NUM_CLASSES, TRAIN_DIR
+from config import INPUT_SIZE, NUM_CLASSES, TRAIN_DIR
 
 le = LabelEncoder()
 

@@ -1,8 +1,9 @@
+import os
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report, confusion_matrix
-from .config import PLOTS_DIR
+from config import PLOTS_DIR
 
 
 def evaluate_model(model, x_val, y_val, label_encoder):
