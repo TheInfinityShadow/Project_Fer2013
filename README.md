@@ -146,6 +146,14 @@ Saved in the `outputs/` folder:
 
 ---
 
+## 🔍 Inference on FER2013 Test Set
+
+To evaluate the model on the official FER2013 test set:
+
+```bash
+python src/test.py
+```
+
 ## 📜 License
 
 This project is released for educational and research purposes. Please cite the original FER2013 dataset if used in publications.
