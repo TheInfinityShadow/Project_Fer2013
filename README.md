@@ -140,7 +140,6 @@ Saved in the `outputs/` folder:
 | Neutral     | 0.57      | 0.66   | 0.62     | 1233    |
 | Sad	        | 0.52      | 0.56   | 0.54     | 1247    |
 | Surprise    | 0.70      | 0.81   | 0.75     | 831     |
-|-------------|-----------|--------|----------|---------|
 | Accuracy    |      	    |    	   | 0.65     | 7178	  |
 
 *Note: Results will vary based on training sample size and data quality.*
