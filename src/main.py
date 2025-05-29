@@ -11,7 +11,7 @@ from plotting import plot_history
 
 def main():
     print("🔹 Loading data...")
-    x_train, x_val, y_train, y_val = load_data()
+    x_train, x_val, y_train, y_val, le = load_data()
 
     print("🔹 Applying data augmentation...")
     datagen = get_augmentation(x_train)
@@ -23,7 +23,7 @@ def main():
     history = train_model(model, datagen, x_train, y_train, x_val, y_val)
 
     print("🔹 Evaluating model...")
-    evaluate_model(model, x_val, y_val)
+    evaluate_model(model, x_val, y_val, le)
 
     print("🔹 Plotting history...")
     plot_history(history)

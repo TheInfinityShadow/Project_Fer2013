@@ -33,4 +33,6 @@ def load_data():
     labels = le.fit_transform(labels)
     labels = to_categorical(labels, NUM_CLASSES)
 
-    return train_test_split(data, labels, test_size=0.2, random_state=42)
+    x_train, x_val, y_train, y_val = train_test_split(data, labels, test_size=0.2, random_state=42)
+
+    return x_train, x_val, y_train, y_val, le

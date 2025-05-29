@@ -19,18 +19,17 @@ LABEL_ENCODER_PATH = os.path.join(PROJECT_ROOT, "outputs", "label_encoder.pkl")
 # Model
 MODEL_PATH = os.path.join(CHECKPOINT_DIR, "Emotion_Detector_Fer2013_V8.keras")
 
-
-
 # Model settings
 INPUT_SIZE = 144
 NUM_CLASSES = 7
 BATCH_SIZE = 64
-EPOCHS = 30
+EPOCHS = 1
 
 # Learning Rate Scheduler
 LR_INITIAL = 0.001
 LR_DECAY_STEPS = 1000
 LR_ALPHA = 0.1
+LR_log = []
 
 Learning_Rate = CosineDecay(initial_learning_rate=LR_INITIAL, decay_steps=LR_DECAY_STEPS, alpha=LR_ALPHA)
 
