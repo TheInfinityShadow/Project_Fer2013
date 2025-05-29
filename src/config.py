@@ -23,7 +23,7 @@ MODEL_PATH = os.path.join(CHECKPOINT_DIR, "Emotion_Detector_Fer2013_V8.keras")
 INPUT_SIZE = 144
 NUM_CLASSES = 7
 BATCH_SIZE = 64
-EPOCHS = 1
+EPOCHS = 30
 
 # Learning Rate Scheduler
 LR_INITIAL = 0.001
